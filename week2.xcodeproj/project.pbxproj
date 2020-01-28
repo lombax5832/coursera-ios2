@@ -15,6 +15,8 @@
 		AA12C61D23DF100200E6E462 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA12C61B23DF100200E6E462 /* LaunchScreen.storyboard */; };
 		AA12C62823DF100200E6E462 /* week2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12C62723DF100200E6E462 /* week2Tests.swift */; };
 		AA12C63323DF100200E6E462 /* week2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12C63223DF100200E6E462 /* week2UITests.swift */; };
+		AA12C64123DF101D00E6E462 /* scenery.png in Resources */ = {isa = PBXBuildFile; fileRef = AA12C64023DF101D00E6E462 /* scenery.png */; };
+		AA12C64323DF102D00E6E462 /* RGBAImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA12C64223DF102D00E6E462 /* RGBAImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		AA12C62E23DF100200E6E462 /* week2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = week2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA12C63223DF100200E6E462 /* week2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = week2UITests.swift; sourceTree = "<group>"; };
 		AA12C63423DF100200E6E462 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA12C64023DF101D00E6E462 /* scenery.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scenery.png; sourceTree = "<group>"; };
+		AA12C64223DF102D00E6E462 /* RGBAImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBAImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +105,10 @@
 			children = (
 				AA12C61023DF100100E6E462 /* AppDelegate.swift */,
 				AA12C61223DF100100E6E462 /* SceneDelegate.swift */,
+				AA12C64223DF102D00E6E462 /* RGBAImage.swift */,
 				AA12C61423DF100100E6E462 /* ViewController.swift */,
 				AA12C61623DF100100E6E462 /* Main.storyboard */,
+				AA12C64023DF101D00E6E462 /* scenery.png */,
 				AA12C61923DF100200E6E462 /* Assets.xcassets */,
 				AA12C61B23DF100200E6E462 /* LaunchScreen.storyboard */,
 				AA12C61E23DF100200E6E462 /* Info.plist */,
@@ -235,6 +241,7 @@
 				AA12C61D23DF100200E6E462 /* LaunchScreen.storyboard in Resources */,
 				AA12C61A23DF100200E6E462 /* Assets.xcassets in Resources */,
 				AA12C61823DF100100E6E462 /* Main.storyboard in Resources */,
+				AA12C64123DF101D00E6E462 /* scenery.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA12C61523DF100100E6E462 /* ViewController.swift in Sources */,
+				AA12C64323DF102D00E6E462 /* RGBAImage.swift in Sources */,
 				AA12C61123DF100100E6E462 /* AppDelegate.swift in Sources */,
 				AA12C61323DF100100E6E462 /* SceneDelegate.swift in Sources */,
 			);
