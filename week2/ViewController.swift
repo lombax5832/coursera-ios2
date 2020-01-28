@@ -10,16 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var filteredImage: UIImage?
+    var originalImage: UIImage?
+    
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var imageOrig: UIImageView!
+    
+    @IBAction func switchImage(_ sender: UISwitch) {
+        if(sender.isOn){
+            imageView.image = filteredImage
+        }else{
+            imageView.image = originalImage
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let image = UIImage(named: "scenery.png")!
-        var rgbaImage = RGBAImage(image: image)!
+        originalImage = UIImage(named: "scenery.png")!
+        let rgbaImage = RGBAImage(image: originalImage!)!
         
-        imageOrig.image = image
+        imageView.image = originalImage
         
         //let pixelCount = rgbaImage.width * rgbaImage.height
         let avgRed = 107
@@ -48,11 +58,11 @@ class ViewController: UIViewController {
             }
         }
         
-        let result = rgbaImage.toUIImage()
+        filteredImage = rgbaImage.toUIImage()
         
         print("This code has executed")
         
-        imageView.image = result
+        //imageView.image = result
     }
 
 
