@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     var filteredImage: UIImage?
     var originalImage: UIImage?
@@ -32,7 +32,56 @@ class ViewController: UIViewController {
         originalImage = UIImage(named: "scenery.png")
         imageView.image = originalImage
     }
-
+    
+    @IBAction func onShare(_ sender: Any) {
+        let activityController = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: nil)
+        
+        present(activityController, animated: true, completion: nil)
+    }
+    
+    @IBAction func onNewPhoto(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "New Photo", message: nil, preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(title: "Camera", style: .default, handler: { action in
+            self.showCamera()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Album", style: .default, handler: { action in
+            self.showAlbum()
+        }))
+        
+        actionSheet.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        self.present(actionSheet, animated:true, completion:nil)
+    }
+    
+    func showCamera(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .camera
+        
+        present(cameraPicker, animated:true, completion:nil)
+    }
+    
+    func showAlbum(){
+        let cameraPicker = UIImagePickerController()
+        cameraPicker.delegate = self
+        cameraPicker.sourceType = .photoLibrary
+        
+        present(cameraPicker, animated:true, completion:nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        dismiss(animated: true, completion: nil)
+        if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage{
+            imageView.image = image
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     //A simple toggle implementation
     @IBAction func onFilter(_ sender: UIButton) {
         if(sender.isSelected){
